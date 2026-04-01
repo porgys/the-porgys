@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Porgys — Business Growth Consultancy</title>
+  <meta name="description" content="The Porgys is a premier Business Growth Consultancy delivering advertising concepts, brand strategy, productions, and creative campaigns that command markets." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Porgys — Business Growth Consultancy" />
+  <meta property="og:description" content="150+ brand campaigns. Proven results. World-class creative strategy." />
+  <meta property="og:image" content="assets/logo/logo.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo/logo.jpg" />
+  <link rel="apple-touch-icon" href="assets/logo/logo.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CURSOR
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <img src="assets/logo/logo.jpg" alt="The Porgys" class="nav__logo-img" />
+      <span class="nav__logo-text">The Porgys</span>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#showcase" class="nav__link">Work</a></li>
+      <li><a href="#services" class="nav__link">Services</a></li>
+      <li><a href="#contact" class="nav__link nav__link--cta">Connect</a></li>
+    </ul>
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mobile-menu__link">About</a></li>
+      <li><a href="#showcase" class="mobile-menu__link">Work</a></li>
+      <li><a href="#services" class="mobile-menu__link">Services</a></li>
+      <li><a href="#contact" class="mobile-menu__link">Connect</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       SECTION 1: HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <!-- Video Background -->
+    <div class="hero__video-wrap">
+      <video
+        class="hero__video"
+        id="hero-video"
+        src="assets/video/hero.mov"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+      <div class="hero__overlay"></div>
+      <div class="hero__overlay-gradient"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="hero__content">
+      <div class="hero__logo-wrap">
+        <img src="assets/logo/logo.jpg" alt="The Porgys" class="hero__logo" id="hero-logo" />
+      </div>
+
+      <div class="hero__text">
+        <p class="hero__eyebrow" id="hero-eyebrow">Business Growth Consultancy</p>
+        <h1 class="hero__headline" id="hero-headline">
+          <span class="headline-line">We Build Brands</span>
+          <span class="headline-line">That Command</span>
+          <span class="headline-line accent-text">Markets.</span>
+        </h1>
+        <p class="hero__sub" id="hero-sub">
+          150+ campaigns. Proven results. Uncompromising creative vision.
+        </p>
+      </div>
+
+      <div class="hero__cta-wrap" id="hero-cta">
+        <a href="#about" class="btn btn--primary">Discover The Porgys</a>
+        <a href="#showcase" class="btn btn--ghost">View Our Work</a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll" id="hero-scroll">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+
+    <!-- Floating Orbs -->
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: ABOUT
+  ============================================================ -->
+  <section class="about" id="about">
+    <div class="about__bg-text" aria-hidden="true">PORGYS</div>
+
+    <div class="about__container">
+      <!-- Left: Statement -->
+      <div class="about__left">
+        <span class="section-label">About</span>
+        <h2 class="about__headline">
+          <span class="split-line">Strategy Meets</span>
+          <span class="split-line">Creative Vision.</span>
+        </h2>
+        <div class="about__divider"></div>
+        <p class="about__body">
+          The Porgys is not an agency. We are a growth engine — embedding strategic intelligence and creative firepower directly into your brand to produce outcomes that matter.
+        </p>
+        <p class="about__body about__body--accent">
+          We have worked with top companies, led landmark campaigns, and built brand stories that move markets.
+        </p>
+        <a href="#services" class="btn btn--outline">Our Services</a>
+      </div>
+
+      <!-- Right: Stats -->
+      <div class="about__right">
+        <div class="stat-card">
+          <div class="stat-card__number">
+            <span class="counter" data-target="150">0</span>
+            <span class="stat-card__plus">+</span>
+          </div>
+          <p class="stat-card__label">Brand Campaigns Delivered</p>
+          <div class="stat-card__bar"></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card__number">
+            <span class="counter" data-target="12">0</span>
+            <span class="stat-card__plus">+</span>
+          </div>
+          <p class="stat-card__label">Years of Market Expertise</p>
+          <div class="stat-card__bar"></div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-card__number">
+            <span class="counter" data-target="98">0</span>
+            <span class="stat-card__plus">%</span>
+          </div>
+          <p class="stat-card__label">Client Satisfaction Rate</p>
+          <div class="stat-card__bar"></div>
+        </div>
+
+        <!-- Floating accent card -->
+        <div class="about__accent-card">
+          <img src="assets/logo/logo.jpg" alt="The Porgys" class="about__accent-logo" />
+          <p>"We don't follow trends. We set them."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services preview strip -->
+    <div class="about__strip">
+      <div class="about__strip-track">
+        <span>Brand Strategy</span>
+        <span class="strip-dot">◆</span>
+        <span>Growth Consulting</span>
+        <span class="strip-dot">◆</span>
+        <span>Advertising Concepts</span>
+        <span class="strip-dot">◆</span>
+        <span>Brand Identity</span>
+        <span class="strip-dot">◆</span>
+        <span>Productions</span>
+        <span class="strip-dot">◆</span>
+        <span>Creative Direction</span>
+        <span class="strip-dot">◆</span>
+        <span>Brand Strategy</span>
+        <span class="strip-dot">◆</span>
+        <span>Growth Consulting</span>
+        <span class="strip-dot">◆</span>
+        <span>Advertising Concepts</span>
+        <span class="strip-dot">◆</span>
+        <span>Brand Identity</span>
+        <span class="strip-dot">◆</span>
+        <span>Productions</span>
+        <span class="strip-dot">◆</span>
+        <span>Creative Direction</span>
+        <span class="strip-dot">◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3: SHOWCASE
+  ============================================================ -->
+  <section class="showcase" id="showcase">
+    <!-- Aerial skyline background -->
+    <div class="showcase__bg">
+      <div class="showcase__bg-layer"></div>
+      <div class="showcase__bg-overlay"></div>
+    </div>
+
+    <div class="showcase__header">
+      <span class="section-label">Our Work</span>
+      <h2 class="showcase__headline">
+        <span class="split-line">Work That</span>
+        <span class="split-line accent-text">Speaks Volumes.</span>
+      </h2>
+      <p class="showcase__sub">Three dimensions of excellence — one consistent result.</p>
+    </div>
+
+    <!-- Three Phone Cards -->
+    <div class="showcase__cards" id="showcase-cards">
+
+      <!-- Card 1: Campaigns & Advertising (Left, shorter, white) -->
+      <div class="phone-card phone-card--left phone-card--light" data-index="0">
+        <div class="phone-card__inner">
+          <!-- Phone header bar -->
+          <div class="phone-card__header">
+            <img src="assets/logo/logo.jpg" alt="" class="phone-card__header-logo" />
+            <div class="phone-card__header-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="phone-card__content">
+            <div class="phone-card__media phone-card__media--1">
+              <div class="media-placeholder media-placeholder--1">
+                <div class="media-kenburns"></div>
+              </div>
+            </div>
+            <div class="phone-card__body">
+              <span class="phone-card__tag">Campaigns</span>
+              <h3 class="phone-card__title">Advertising That Moves People</h3>
+              <p class="phone-card__text">Concepts built to capture attention and drive measurable action across every channel.</p>
+              <div class="phone-card__meta">
+                <span>150+ Campaigns</span>
+                <span class="phone-card__dot">·</span>
+                <span>Multi-Platform</span>
+              </div>
+            </div>
+            <div class="phone-card__media phone-card__media--small">
+              <div class="media-placeholder media-placeholder--2">
+                <div class="media-kenburns"></div>
+              </div>
+            </div>
+            <div class="phone-card__body">
+              <p class="phone-card__caption">From concept to campaign — we own every stage of the creative process with precision and purpose.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Brand Strategy & Growth (Center, tallest, dark) -->
+      <div class="phone-card phone-card--center phone-card--dark" data-index="1">
+        <div class="phone-card__inner">
+          <div class="phone-card__header">
+            <img src="assets/logo/logo.jpg" alt="" class="phone-card__header-logo phone-card__header-logo--light" />
+            <div class="phone-card__header-dots phone-card__header-dots--light">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="phone-card__content">
+            <div class="phone-card__media phone-card__media--hero">
+              <div class="media-placeholder media-placeholder--3">
+                <div class="media-kenburns"></div>
+                <div class="media-overlay-text">
+                  <span class="media-big-number">150<sup>+</sup></span>
+                  <span class="media-big-label">CAMPAIGNS</span>
+                </div>
+              </div>
+            </div>
+            <div class="phone-card__body phone-card__body--dark">
+              <span class="phone-card__tag phone-card__tag--cyan">Brand Strategy</span>
+              <h3 class="phone-card__title phone-card__title--light">Engineered for Growth.</h3>
+              <p class="phone-card__text phone-card__text--muted">We architect brand identities and business strategies that create sustainable competitive advantages.</p>
+            </div>
+            <div class="phone-card__specs">
+              <div class="spec-row">
+                <span class="spec-label">APPROACH</span>
+                <span class="spec-value">Data-Led Creative</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">RESULTS</span>
+                <span class="spec-value accent-cyan">Consistent Growth</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">TRACK RECORD</span>
+                <span class="spec-value">Top Tier Brands</span>
+              </div>
+            </div>
+            <div class="phone-card__media phone-card__media--small">
+              <div class="media-placeholder media-placeholder--4">
+                <div class="media-kenburns"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Productions & Creative (Right, shorter, white) -->
+      <div class="phone-card phone-card--right phone-card--light" data-index="2">
+        <div class="phone-card__inner">
+          <div class="phone-card__header">
+            <img src="assets/logo/logo.jpg" alt="" class="phone-card__header-logo" />
+            <div class="phone-card__header-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="phone-card__content">
+            <div class="phone-card__body">
+              <span class="phone-card__tag">Productions</span>
+              <h3 class="phone-card__title">Creative That Commands Attention</h3>
+            </div>
+            <div class="phone-card__media phone-card__media--1">
+              <div class="media-placeholder media-placeholder--5">
+                <div class="media-kenburns"></div>
+              </div>
+            </div>
+            <div class="phone-card__body">
+              <p class="phone-card__text">Video, photography, brand imagery — produced to the highest cinematic standard, built to last.</p>
+            </div>
+            <div class="phone-card__service-list">
+              <div class="service-item">
+                <span class="service-item__icon">▶</span>
+                <span>Video Production</span>
+              </div>
+              <div class="service-item">
+                <span class="service-item__icon">◎</span>
+                <span>Brand Photography</span>
+              </div>
+              <div class="service-item">
+                <span class="service-item__icon">◈</span>
+                <span>Brand Identity</span>
+              </div>
+              <div class="service-item">
+                <span class="service-item__icon">✦</span>
+                <span>Creative Direction</span>
+              </div>
+            </div>
+            <div class="phone-card__media phone-card__media--small">
+              <div class="media-placeholder media-placeholder--6">
+                <div class="media-kenburns"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="showcase__footer">
+      <a href="#contact" class="btn btn--primary">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4: SERVICES
+  ============================================================ -->
+  <section class="services" id="services">
+    <div class="services__bg-orb"></div>
+
+    <div class="services__header">
+      <span class="section-label">Services</span>
+      <h2 class="services__headline">
+        <span class="split-line">Everything Your Brand</span>
+        <span class="split-line accent-text">Needs to Win.</span>
+      </h2>
+    </div>
+
+    <div class="services__grid">
+
+      <div class="service-card" data-index="0">
+        <div class="service-card__number">01</div>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="M12 20h16M20 12v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-card__title">Advertising Concepts &amp; Campaigns</h3>
+        <p class="service-card__desc">Big ideas executed with precision. From initial concept through multi-channel deployment — campaigns that cut through the noise and drive results.</p>
+        <div class="service-card__line"></div>
+      </div>
+
+      <div class="service-card" data-index="1">
+        <div class="service-card__number">02</div>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M8 32L20 8l12 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.5 25h17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-card__title">Brand Strategy &amp; Advisory</h3>
+        <p class="service-card__desc">Clarity on who you are, where you're going, and why customers should choose you. Strategic counsel that shapes brand trajectories.</p>
+        <div class="service-card__line"></div>
+      </div>
+
+      <div class="service-card" data-index="2">
+        <div class="service-card__number">03</div>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M14 20l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-card__title">Business Growth Strategy</h3>
+        <p class="service-card__desc">Revenue-focused strategic planning that identifies leverage points, unlocks new markets, and builds frameworks for sustainable growth.</p>
+        <div class="service-card__line"></div>
+      </div>
+
+      <div class="service-card" data-index="3">
+        <div class="service-card__number">04</div>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 32c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="service-card__title">Production — Video, Photo &amp; Content</h3>
+        <p class="service-card__desc">Cinematic-quality productions that elevate perception. From brand films to social content — every frame crafted to reinforce authority.</p>
+        <div class="service-card__line"></div>
+      </div>
+
+      <div class="service-card service-card--wide" data-index="4">
+        <div class="service-card__number">05</div>
+        <div class="service-card__icon">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 8l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L20 25.5l-6.8 3.5 1.3-7.6L9 16.1l7.5-1.1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="service-card__title">Brand Identity &amp; Image Creation</h3>
+        <p class="service-card__desc">The complete brand universe — visual identity, tone of voice, brand guidelines, and image assets that make an immediate, lasting impression. A brand identity that commands respect before a single word is read.</p>
+        <div class="service-card__line"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: CONTACT
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="contact__bg-gradient"></div>
+    <div class="contact__orb"></div>
+
+    <div class="contact__container">
+      <div class="contact__left">
+        <span class="section-label">Connect</span>
+        <h2 class="contact__headline">
+          <span class="split-line">Ready to</span>
+          <span class="split-line">Command Your</span>
+          <span class="split-line accent-text">Market?</span>
+        </h2>
+        <p class="contact__body">
+          Every great brand story starts with a conversation. Tell us where you want to go — we'll build the strategy to get you there.
+        </p>
+
+        <div class="contact__info">
+          <div class="contact__info-item">
+            <span class="contact__info-icon">✉</span>
+            <a href="mailto:hello@theporgys.com">hello@theporgys.com</a>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">◎</span>
+            <span>Available Worldwide</span>
+          </div>
+        </div>
+
+        <div class="contact__social">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
+          <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+        </div>
+      </div>
+
+      <div class="contact__right">
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <input type="text" class="form-input" id="form-name" name="name" placeholder=" " required />
+            <label class="form-label" for="form-name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-input" id="form-email" name="email" placeholder=" " required />
+            <label class="form-label" for="form-email">Email Address</label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-input" id="form-company" name="company" placeholder=" " />
+            <label class="form-label" for="form-company">Company / Brand</label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" id="form-service" name="service">
+              <option value="" disabled selected></option>
+              <option value="advertising">Advertising Campaigns</option>
+              <option value="brand-strategy">Brand Strategy</option>
+              <option value="growth">Business Growth</option>
+              <option value="production">Production</option>
+              <option value="identity">Brand Identity</option>
+              <option value="other">Other</option>
+            </select>
+            <label class="form-label form-label--select" for="form-service">Area of Interest</label>
+          </div>
+          <div class="form-group">
+            <textarea class="form-input form-textarea" id="form-message" name="message" placeholder=" " rows="4"></textarea>
+            <label class="form-label" for="form-message">Tell us about your brand</label>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <span>Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" class="btn-icon"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="assets/logo/logo.jpg" alt="The Porgys" />
+          <span>The Porgys</span>
+        </div>
+        <p class="footer__copy">© 2025 The Porgys. All rights reserved. Business Growth Consultancy.</p>
+        <div class="footer__links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="page-transition"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
