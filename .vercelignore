@@ -1,0 +1,11 @@
+# Files that must NOT ship to Vercel — sensitive / dev-only
+.claude
+.DS_Store
+*.log
+.env
+.env.*
+node_modules
+
+# Master brain artefacts (never publish)
+.claude/projects/**
+.claude/projects
