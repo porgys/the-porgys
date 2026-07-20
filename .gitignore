@@ -1,2 +1,5 @@
 .DS_Store
 .claude
+*.zip
+.DS_Store
+COMMUNICATION-RULES-v2.md
