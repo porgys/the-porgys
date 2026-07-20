@@ -50,6 +50,7 @@
     <ul class="nav__links">
       <li><a href="#about" class="nav__link">About</a></li>
       <li><a href="#showcase" class="nav__link">Work</a></li>
+      <li><a href="#case-studies" class="nav__link">Selected Work</a></li>
       <li><a href="#services" class="nav__link">Services</a></li>
       <li><a href="#contact" class="nav__link nav__link--cta">Connect</a></li>
     </ul>
@@ -63,6 +64,7 @@
     <ul>
       <li><a href="#about" class="mobile-menu__link">About</a></li>
       <li><a href="#showcase" class="mobile-menu__link">Work</a></li>
+      <li><a href="#case-studies" class="mobile-menu__link">Selected Work</a></li>
       <li><a href="#services" class="mobile-menu__link">Services</a></li>
       <li><a href="#contact" class="mobile-menu__link">Connect</a></li>
     </ul>
@@ -83,10 +85,23 @@
         loop
         playsinline
         preload="metadata"
-      >
-        <source src="assets/video/hero.webm" type="video/webm" />
-        <source src="assets/video/hero.mp4" type="video/mp4" />
-      </video>
+      ></video>
+      <script>
+        (function () {
+          var isMobile = window.matchMedia('(max-width: 768px)').matches;
+          var video = document.getElementById('hero-video');
+          var base = isMobile ? 'assets/video/hero-mobile' : 'assets/video/hero';
+          var webm = document.createElement('source');
+          webm.src = base + '.webm';
+          webm.type = 'video/webm';
+          var mp4 = document.createElement('source');
+          mp4.src = base + '.mp4';
+          mp4.type = 'video/mp4';
+          video.appendChild(webm);
+          video.appendChild(mp4);
+          video.load();
+        })();
+      </script>
       <div class="hero__overlay"></div>
       <div class="hero__overlay-gradient"></div>
     </div>
@@ -142,40 +157,34 @@
         </h2>
         <div class="about__divider"></div>
         <p class="about__body">
-          The Porgys is not an agency. We are a growth engine — embedding strategic intelligence and creative firepower directly into your brand to produce outcomes that matter.
+          The Porgys isn't an agency — it's what happens when Fortune 500-grade strategic thinking stops staying inside boardrooms and starts building brands directly. I embed strategy and creative execution into a business until growth isn't a target anymore, it's a trajectory.
         </p>
         <p class="about__body about__body--accent">
-          We have worked with top companies, led landmark campaigns, and built brand stories that move markets.
+          [ADD: one sharp sentence naming the specific kind of transformation you're known for — e.g. "I've taken brands from category-invisible to category-defining in under a year."]
         </p>
         <a href="#services" class="btn btn--outline">Our Services</a>
       </div>
 
-      <!-- Right: Stats -->
+      <!-- Right: Capability badges (replaces unverifiable stat counters) -->
       <div class="about__right">
         <div class="stat-card">
-          <div class="stat-card__number">
-            <span class="counter" data-target="150">0</span>
-            <span class="stat-card__plus">+</span>
-          </div>
-          <p class="stat-card__label">Brand Campaigns Delivered</p>
+          <div class="stat-card__badge-icon">◆</div>
+          <p class="stat-card__badge-title">Fortune 500 Pedigree</p>
+          <p class="stat-card__label">Strategic counsel carried into founder-led execution</p>
           <div class="stat-card__bar"></div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-card__number">
-            <span class="counter" data-target="12">0</span>
-            <span class="stat-card__plus">+</span>
-          </div>
-          <p class="stat-card__label">Years of Market Expertise</p>
+          <div class="stat-card__badge-icon">◆</div>
+          <p class="stat-card__badge-title">Multi-Vertical Builder</p>
+          <p class="stat-card__label">[X verticals] built under one operating system</p>
           <div class="stat-card__bar"></div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-card__number">
-            <span class="counter" data-target="98">0</span>
-            <span class="stat-card__plus">%</span>
-          </div>
-          <p class="stat-card__label">Client Satisfaction Rate</p>
+          <div class="stat-card__badge-icon">◆</div>
+          <p class="stat-card__badge-title">Full-Cycle Ownership</p>
+          <p class="stat-card__label">Strategy through production — never handed off</p>
           <div class="stat-card__bar"></div>
         </div>
 
@@ -253,8 +262,19 @@
           <!-- Content -->
           <div class="phone-card__content">
             <div class="phone-card__media phone-card__media--1">
-              <div class="media-placeholder media-placeholder--1">
-                <div class="media-kenburns"></div>
+              <div class="media-slideshow">
+                <div class="media-slide media-placeholder--1">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 1]</span>
+                </div>
+                <div class="media-slide media-placeholder--2">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 2]</span>
+                </div>
+                <div class="media-slide media-placeholder--3">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 3]</span>
+                </div>
               </div>
             </div>
             <div class="phone-card__body">
@@ -262,7 +282,7 @@
               <h3 class="phone-card__title">Advertising That Moves People</h3>
               <p class="phone-card__text">Concepts built to capture attention and drive measurable action across every channel.</p>
               <div class="phone-card__meta">
-                <span>150+ Campaigns</span>
+                <span>[X]+ Campaigns</span>
                 <span class="phone-card__dot">·</span>
                 <span>Multi-Platform</span>
               </div>
@@ -290,12 +310,23 @@
           </div>
           <div class="phone-card__content">
             <div class="phone-card__media phone-card__media--hero">
-              <div class="media-placeholder media-placeholder--3">
-                <div class="media-kenburns"></div>
-                <div class="media-overlay-text">
-                  <span class="media-big-number">150<sup>+</sup></span>
-                  <span class="media-big-label">CAMPAIGNS</span>
+              <div class="media-slideshow">
+                <div class="media-slide media-placeholder--3">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 1]</span>
                 </div>
+                <div class="media-slide media-placeholder--4">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 2]</span>
+                </div>
+                <div class="media-slide media-placeholder--5">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 3]</span>
+                </div>
+              </div>
+              <div class="media-overlay-text">
+                <span class="media-big-number">GROWTH</span>
+                <span class="media-big-label">ENGINEERED</span>
               </div>
             </div>
             <div class="phone-card__body phone-card__body--dark">
@@ -341,8 +372,19 @@
               <h3 class="phone-card__title">Creative That Commands Attention</h3>
             </div>
             <div class="phone-card__media phone-card__media--1">
-              <div class="media-placeholder media-placeholder--5">
-                <div class="media-kenburns"></div>
+              <div class="media-slideshow">
+                <div class="media-slide media-placeholder--5">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 1]</span>
+                </div>
+                <div class="media-slide media-placeholder--6">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 2]</span>
+                </div>
+                <div class="media-slide media-placeholder--1">
+                  <div class="media-kenburns"></div>
+                  <span class="media-slide__label">[Project Visual 3]</span>
+                </div>
               </div>
             </div>
             <div class="phone-card__body">
@@ -380,6 +422,176 @@
     <div class="showcase__footer">
       <a href="#contact" class="btn btn--primary">Start a Project</a>
     </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3.5: SELECTED WORK / CASE STUDIES
+       ── PLACEHOLDER CONTENT ──
+       Everything in [BRACKETS] is a placeholder for Porgy to replace
+       with real brand names, visuals, and specifics. Duplicate one
+       .case-card block per additional project. Image placeholders
+       are marked "[UPLOAD VISUAL]" — replace the media-placeholder
+       div with an <img src="assets/work/[brand]-01.jpg">.
+  ============================================================ -->
+  <section class="case-studies" id="case-studies">
+    <div class="case-studies__header">
+      <span class="section-label">Selected Work</span>
+      <h2 class="showcase__headline">
+        <span class="split-line">Brands We've</span>
+        <span class="split-line accent-text">Taken Further.</span>
+      </h2>
+      <p class="showcase__sub">Real engagements. Real brands. The thinking behind the work.</p>
+    </div>
+
+    <div class="case-studies__grid">
+
+      <!-- Case 1: Dalxic Trade — Click To Sell -->
+      <article class="case-card case-card--phone">
+        <div class="case-card__media case-card__media--phone">
+          <video class="case-card__video" poster="assets/work/click-to-sell-poster.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/work/click-to-sell.webm" type="video/webm" />
+            <source src="assets/work/click-to-sell.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">Dalxic Trade</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">Retail &amp; Boutique Commerce</span>
+          </div>
+          <h3 class="case-card__title">Real-Time Sales Visibility for Retail Owners</h3>
+          <div class="case-card__narrative">
+            <p><span class="case-card__label">Challenge —</span> Boutique and retail owners had no way to see sales happening on the floor without being physically present.</p>
+            <p><span class="case-card__label">Approach —</span> Built a live transaction dashboard inside Dalxic Trade, syncing every sale to the owner's phone the moment it happens.</p>
+            <p><span class="case-card__label">Result —</span> Owners track sales from home, in real-time, without chasing staff for updates.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 2 -->
+      <article class="case-card">
+        <div class="case-card__media">
+          <div class="media-placeholder media-placeholder--2">
+            <div class="media-kenburns"></div>
+            <span class="case-card__media-label">[UPLOAD VISUAL — 16:9]</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">[Brand Name]</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">[Industry / Vertical]</span>
+          </div>
+          <h3 class="case-card__title">[Transformation headline]</h3>
+          <div class="case-card__narrative">
+            <p><span class="case-card__label">Challenge —</span> [Starting point.]</p>
+            <p><span class="case-card__label">Approach —</span> [Strategic move.]</p>
+            <p><span class="case-card__label">Result —</span> [Visible outcome.]</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 3: Dalxic Trade — Bookings On Autopilot -->
+      <article class="case-card case-card--phone">
+        <div class="case-card__media case-card__media--phone">
+          <video class="case-card__video" poster="assets/work/bookings-autopilot-poster.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/work/bookings-autopilot.webm" type="video/webm" />
+            <source src="assets/work/bookings-autopilot.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">Dalxic Trade</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">Salons &amp; Service Booking</span>
+          </div>
+          <h3 class="case-card__title">Turning Walk-Ins From a Problem Into Free Capacity</h3>
+          <div class="case-card__narrative">
+            <p><span class="case-card__label">Challenge —</span> Salons were losing revenue to double-bookings, or sitting on empty chairs between scheduled appointments.</p>
+            <p><span class="case-card__label">Approach —</span> Built a real-time availability engine that slots walk-ins directly into open gaps in the schedule.</p>
+            <p><span class="case-card__label">Result —</span> No overbooking, no chaos — every gap in the day becomes bookable revenue instead of dead time.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 4: Dalxic Trade — Bill Sorted, Smile Earned -->
+      <article class="case-card case-card--phone">
+        <div class="case-card__media case-card__media--phone">
+          <video class="case-card__video" poster="assets/work/bill-sorted-poster.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/work/bill-sorted.webm" type="video/webm" />
+            <source src="assets/work/bill-sorted.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">Dalxic Trade</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">Hospitality &amp; Restaurants</span>
+          </div>
+          <h3 class="case-card__title">Killing the Paper Receipt, Keeping the Smile</h3>
+          <div class="case-card__narrative">
+            <p><span class="case-card__label">Challenge —</span> Split bills and paper receipts slowed down service and frustrated groups trying to settle up together.</p>
+            <p><span class="case-card__label">Approach —</span> Digital, itemized receipts delivered straight to the table's phones via SMS or WhatsApp, split however the group needs.</p>
+            <p><span class="case-card__label">Result —</span> No paper waste, faster turnaround at the end of the meal, and a smoother close to the experience.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 5: Dalxic Trade — Full House? No Problem -->
+      <article class="case-card case-card--phone">
+        <div class="case-card__media case-card__media--phone">
+          <video class="case-card__video" poster="assets/work/full-house-poster.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/work/full-house.webm" type="video/webm" />
+            <source src="assets/work/full-house.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">Dalxic Trade</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">Restaurants &amp; Table Management</span>
+          </div>
+          <h3 class="case-card__title">Reading the Floor in Real Time</h3>
+          <div class="case-card__narrative">
+            <p><span class="case-card__label">Challenge —</span> On a full house, staff had no fast way to know which tables were ready to turn and which needed more time.</p>
+            <p><span class="case-card__label">Approach —</span> A live table-time tracking dashboard showing exactly when to clear a table or when to upsell instead.</p>
+            <p><span class="case-card__label">Result —</span> Faster table turns during peak hours, without guesswork slowing the floor down.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 6 — RESERVED for ChickenAI (separate client brand). Awaiting assets. -->
+      <article class="case-card">
+        <div class="case-card__media">
+          <div class="media-placeholder media-placeholder--6">
+            <div class="media-kenburns"></div>
+            <span class="case-card__media-label">[UPLOAD VISUAL — ChickenAI]</span>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">ChickenAI</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">[Industry / Vertical]</span>
+          </div>
+          <h3 class="case-card__title">[Transformation headline]</h3>
+          <div class="case-card__narrative">
+            <p><span class="case-card__label">Challenge —</span> [Starting point.]</p>
+            <p><span class="case-card__label">Approach —</span> [Strategic move.]</p>
+            <p><span class="case-card__label">Result —</span> [Visible outcome.]</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Optional testimonial slot — delete this block if unused, don't fill with invented quotes -->
+    <!--
+    <div class="case-studies__testimonial">
+      <p class="case-studies__quote">"[Real quote from a real client or colleague]"</p>
+      <p class="case-studies__quote-attr">— [Name, Title, Company]</p>
+    </div>
+    -->
   </section>
 
   <!-- ============================================================

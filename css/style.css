@@ -624,15 +624,19 @@ body:hover .cursor { opacity: 1; }
 }
 .stat-card:hover::before { opacity: 1; }
 
-.stat-card__number {
+.stat-card__badge-icon {
+  font-size: 18px;
+  color: var(--cyan);
+  position: relative;
+}
+
+.stat-card__badge-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 52px;
-  line-height: 1;
+  font-size: 22px;
+  line-height: 1.2;
   color: var(--white);
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -1132,15 +1136,70 @@ body:hover .cursor { opacity: 1; }
   100% { transform: scale(1.15) translate(-3%, -2%); }
 }
 
+/* Auto-cycling project slideshow (used inside phone-card media zones) */
+.media-slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.media-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: mediaSlideCycle 12s infinite;
+}
+
+.media-slide:nth-child(1) { animation-delay: 0s; }
+.media-slide:nth-child(2) { animation-delay: 4s; }
+.media-slide:nth-child(3) { animation-delay: 8s; }
+
+@keyframes mediaSlideCycle {
+  0%   { opacity: 0; transform: scale(1.06) translateX(16px); }
+  4%   { opacity: 1; transform: scale(1) translateX(0); }
+  28%  { opacity: 1; transform: scale(1) translateX(0); }
+  33%  { opacity: 0; transform: scale(0.97) translateX(-16px); }
+  100% { opacity: 0; }
+}
+
+.media-slide__label {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.3);
+  border: 1px dashed rgba(255,255,255,0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-slide { animation: none; opacity: 0; }
+  .media-slide:first-child { opacity: 1; }
+  .media-kenburns { animation: none; }
+}
+
 /* Media overlay text */
 .media-overlay-text {
   position: absolute;
   inset: 0;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  pointer-events: none;
 }
 
 .media-big-number {
@@ -1149,7 +1208,8 @@ body:hover .cursor { opacity: 1; }
   font-size: 52px;
   color: var(--white);
   line-height: 1;
-  text-shadow: 0 0 40px var(--cyan-glow);
+  text-shadow: 0 0 40px var(--cyan-glow), 0 2px 20px rgba(0,0,0,0.6);
+  letter-spacing: 0.02em;
 }
 
 .media-big-number sup {
@@ -1175,6 +1235,152 @@ body:hover .cursor { opacity: 1; }
   z-index: 2;
   text-align: center;
   margin-top: 60px;
+}
+
+/* ── SELECTED WORK / CASE STUDIES ──────────────────────────── */
+.case-studies {
+  position: relative;
+  padding: 140px 80px;
+  background: var(--bg);
+}
+
+.case-studies__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 64px;
+}
+
+.case-studies__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.case-card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: border-color 0.4s, transform 0.4s;
+}
+
+.case-card:hover {
+  border-color: rgba(0,212,255,0.3);
+  transform: translateY(-4px);
+}
+
+.case-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.case-card__media-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.35);
+  border: 1px dashed rgba(255,255,255,0.25);
+  z-index: 2;
+}
+
+.case-card__body {
+  padding: 24px 26px 28px;
+}
+
+.case-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.case-card__brand {
+  color: var(--cyan);
+}
+
+.case-card__industry {
+  color: rgba(255,255,255,0.4);
+}
+
+.case-card__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.case-card__narrative p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 8px;
+}
+
+.case-card__label {
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+
+.case-studies__testimonial {
+  max-width: 720px;
+  margin: 72px auto 0;
+  text-align: center;
+}
+
+.case-studies__quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 24px;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.case-studies__quote-attr {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1024px) {
+  .case-studies__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .case-studies { padding: 90px 24px; }
+  .case-studies__grid { grid-template-columns: 1fr; }
+}
+
+/* Vertical phone-mockup case cards (real campaign video content) */
+.case-card__media--phone {
+  aspect-ratio: 9 / 16;
+  max-height: 480px;
+  background: #000;
+}
+
+.case-card__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* ── SERVICES ───────────────────────────────────────────────── */

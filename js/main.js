@@ -285,6 +285,16 @@ function splitTextToChars(el) {
     });
   });
 
+  // Capability badge cards (About section) — bar reveal on scroll
+  document.querySelectorAll('.stat-card__badge-title').forEach(badge => {
+    ScrollTrigger.create({
+      trigger: badge,
+      start: 'top 80%',
+      onEnter: () => badge.closest('.stat-card').classList.add('animated'),
+      once: true
+    });
+  });
+
   // Background text parallax
   gsap.to('.about__bg-text', {
     yPercent: -30,
@@ -516,20 +526,20 @@ function splitTextToChars(el) {
 
 /* ── PERFORMANCE: PAUSE VIDEO WHEN OFF SCREEN ───────────────── */
 (function initVideoObserver() {
-  const video = document.getElementById('hero-video');
-  if (!video) return;
+  const videos = document.querySelectorAll('#hero-video, .case-card__video');
+  if (!videos.length) return;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        video.play().catch(() => {});
+        entry.target.play().catch(() => {});
       } else {
-        video.pause();
+        entry.target.pause();
       }
     });
   }, { threshold: 0.1 });
 
-  observer.observe(video);
+  videos.forEach(v => observer.observe(v));
 })();
 
 /* ── SECTION LABEL REVEAL ───────────────────────────────────── */
