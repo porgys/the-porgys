@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>More Work — The Porgys</title>
+  <meta name="description" content="Additional selected work from The Porgys — Business Growth Consultancy." />
+
+  <link rel="icon" type="image/jpeg" href="assets/logo/logo.jpg" />
+  <link rel="apple-touch-icon" href="assets/logo/logo.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <img src="assets/logo/logo.jpg" alt="The Porgys" class="nav__logo-img" />
+      <span class="nav__logo-text">The Porgys</span>
+    </div>
+    <ul class="nav__links">
+      <li><a href="index.html#about" class="nav__link">About</a></li>
+      <li><a href="index.html#showcase" class="nav__link">Work</a></li>
+      <li><a href="index.html#case-studies" class="nav__link">Selected Work</a></li>
+      <li><a href="index.html#services" class="nav__link">Services</a></li>
+      <li><a href="index.html#contact" class="nav__link nav__link--cta">Connect</a></li>
+    </ul>
+    <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html#about" class="mobile-menu__link">About</a></li>
+      <li><a href="index.html#showcase" class="mobile-menu__link">Work</a></li>
+      <li><a href="index.html#case-studies" class="mobile-menu__link">Selected Work</a></li>
+      <li><a href="index.html#services" class="mobile-menu__link">Services</a></li>
+      <li><a href="index.html#contact" class="mobile-menu__link">Connect</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       MORE SELECTED WORK — reserved slots awaiting real assets.
+       Move a card back into index.html's case-studies__grid once
+       its real brand name, visuals and copy are ready.
+  ============================================================ -->
+  <section class="case-studies" id="more-work" style="padding-top:160px;">
+    <div class="case-studies__header">
+      <span class="section-label">Selected Work</span>
+      <h2 class="showcase__headline">
+        <span class="split-line">More Brands We've</span>
+        <span class="split-line accent-text">Taken Further.</span>
+      </h2>
+      <p class="showcase__sub">Additional engagements — in progress.</p>
+    </div>
+
+    <div class="case-studies__grid">
+
+      <!-- Case 2 — reserved slot, brand/assets not yet provided -->
+      <article class="case-card case-card--phone case-card--pending">
+        <div class="case-card__media case-card__media--phone">
+          <div class="media-placeholder media-placeholder--2">
+            <div class="media-kenburns"></div>
+            <div class="case-card__pending-mark">
+              <span class="case-card__pending-icon">＋</span>
+              <span class="case-card__pending-label">Case Study<br />In Progress</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">Next Client</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">Details Coming Soon</span>
+          </div>
+          <h3 class="case-card__title">This slot is reserved for the next engagement.</h3>
+        </div>
+      </article>
+
+      <!-- Case 6 — RESERVED for ChickenAI (separate client brand). Awaiting assets. -->
+      <article class="case-card case-card--phone case-card--pending">
+        <div class="case-card__media case-card__media--phone">
+          <div class="media-placeholder media-placeholder--6">
+            <div class="media-kenburns"></div>
+            <div class="case-card__pending-mark">
+              <span class="case-card__pending-icon">＋</span>
+              <span class="case-card__pending-label">Case Study<br />In Progress</span>
+            </div>
+          </div>
+        </div>
+        <div class="case-card__body">
+          <div class="case-card__meta">
+            <span class="case-card__brand">ChickenAI</span>
+            <span class="phone-card__dot">·</span>
+            <span class="case-card__industry">Details Coming Soon</span>
+          </div>
+          <h3 class="case-card__title">Write-up in progress — check back soon.</h3>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="case-studies__more">
+      <a href="index.html#case-studies" class="btn btn--outline">Back to Selected Work</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="position:relative;">
+    <div class="footer__inner">
+      <div class="footer__logo">
+        <img src="assets/logo/logo.jpg" alt="The Porgys" />
+        <span>The Porgys</span>
+      </div>
+      <p class="footer__copy">© 2025 The Porgys. All rights reserved. Business Growth Consultancy.</p>
+      <div class="footer__links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="page-transition" id="page-transition"></div>
+  <script>
+    setTimeout(function () {
+      var el = document.getElementById('page-transition');
+      if (el && getComputedStyle(el).display !== 'none') {
+        el.style.transition = 'opacity 0.3s';
+        el.style.opacity = '0';
+        el.style.pointerEvents = 'none';
+        setTimeout(function () { el.style.display = 'none'; }, 300);
+      }
+    }, 1800);
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

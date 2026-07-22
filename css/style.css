@@ -995,6 +995,17 @@ body:hover .cursor { opacity: 1; }
 
 .phone-card__text--muted { color: rgba(255,255,255,0.5); }
 
+.phone-card__link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.phone-card__link:hover { text-decoration: underline; }
+
 .phone-card__caption {
   font-size: 11px;
   line-height: 1.6;
@@ -1150,6 +1161,8 @@ body:hover .cursor { opacity: 1; }
   width: 100%;
   height: 100%;
   opacity: 0;
+  background-size: cover;
+  background-position: center;
   animation: mediaSlideCycle 12s infinite;
 }
 
@@ -1163,6 +1176,47 @@ body:hover .cursor { opacity: 1; }
   28%  { opacity: 1; transform: scale(1) translateX(0); }
   33%  { opacity: 0; transform: scale(0.97) translateX(-16px); }
   100% { opacity: 0; }
+}
+
+.case-card__pending-mark {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.case-card__pending-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  font-size: 20px;
+  color: rgba(255,255,255,0.55);
+}
+
+.case-card__pending-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.4);
+}
+
+.case-card--pending .case-card__title {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  font-family: var(--font-body);
 }
 
 .media-slide__label {
@@ -1252,10 +1306,16 @@ body:hover .cursor { opacity: 1; }
 
 .case-studies__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
+}
+
+.case-studies__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
 }
 
 .case-card {
@@ -1264,6 +1324,12 @@ body:hover .cursor { opacity: 1; }
   border-radius: var(--radius-card);
   overflow: hidden;
   transition: border-color 0.4s, transform 0.4s;
+}
+
+.case-card--phone {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .case-card:hover {
@@ -1369,17 +1435,33 @@ body:hover .cursor { opacity: 1; }
   .case-studies__grid { grid-template-columns: 1fr; }
 }
 
+/* Desktop/tablet: standardize height for the landscape (16:9) placeholder
+   cards used on the more-work page. The phone-mockup cards (index.html's
+   case-studies grid) are portrait-only now, so they keep their own
+   aspect-ratio/cover sizing further down instead of being letterboxed. */
+@media (min-width: 641px) {
+  .case-studies__grid { align-items: start; }
+
+  .case-card__media:not(.case-card__media--phone) {
+    aspect-ratio: unset;
+    height: 340px;
+  }
+}
+
 /* Vertical phone-mockup case cards (real campaign video content) */
 .case-card__media--phone {
   aspect-ratio: 9 / 16;
-  max-height: 480px;
+  max-height: 640px;
   background: #000;
+  position: relative;
+  overflow: hidden;
 }
 
 .case-card__video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
